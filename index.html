@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lucas Choi</title>
+  <meta name="description" content="Lucas Choi — CS Student & Researcher at the University of Michigan. ML, distributed systems, and full-stack development." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header id="navbar">
+    <nav>
+      <a class="nav-logo" href="#hero">lc</a>
+      <button class="nav-toggle" aria-label="Toggle menu">&#9776;</button>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section id="hero">
+      <div class="hero-content reveal">
+        <p class="hero-greeting">// hello, world</p>
+        <h1 class="hero-name">Lucas Choi<span class="cursor">_</span></h1>
+        <p class="hero-subtitle">CS Student &amp; Researcher @ University of Michigan</p>
+        <p class="hero-tagline">Building intelligent systems at the intersection of ML and software engineering.</p>
+        <a href="#projects" class="btn btn-primary">View My Work</a>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="section-inner">
+        <h2 class="section-title reveal"><span class="accent">#</span> About Me</h2>
+        <div class="about-grid reveal">
+          <div class="about-bio">
+            <p>I'm Lucas, a Computer Science student at the <strong>University of Michigan</strong> (B.S.E., GPA 3.9). I'm a Research Assistant at the Language and Information Technologies Group, where I work on agent training frameworks, adversarial evaluation, and reinforcement learning.</p>
+            <p>I enjoy working across the stack — from fine-tuning ML models and scaling infrastructure on Kubernetes, to building backend services and real-time data pipelines. I've also published three first-author papers at IEEE conferences.</p>
+            <p>When I'm not coding, I'm probably reading about distributed systems or playing chess online.</p>
+          </div>
+          <div class="about-skills">
+            <h3>// skills</h3>
+            <ul class="skills-list">
+              <li>TypeScript / Node.js</li>
+              <li>Python</li>
+              <li>Java / C++</li>
+              <li>SQL / PostgreSQL</li>
+              <li>PyTorch / HuggingFace</li>
+              <li>Reinforcement Learning</li>
+              <li>Docker / Kubernetes</li>
+              <li>Azure / Linux</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <div class="section-inner">
+        <h2 class="section-title reveal"><span class="accent">#</span> Projects</h2>
+        <div class="projects-grid">
+
+          <article class="project-card reveal">
+            <div class="card-header">
+              <span class="card-icon">&#128193;</span>
+              <a href="https://github.com/lcsc0" class="card-link" target="_blank" rel="noopener noreferrer">&#8599;</a>
+            </div>
+            <h3 class="card-title">PaperZero</h3>
+            <p class="card-desc">Applied trajectory diffusion within a VAE latent space to reconstruct state-action sequences for paper-folding, enabling decision-making in non-deterministic environments. Implemented U-Net denoising with cosine noise scheduling; trained on Google TPUs.</p>
+            <div class="card-tags">
+              <span class="tag">PyTorch</span>
+              <span class="tag">U-Net</span>
+              <span class="tag">VAE</span>
+              <span class="tag">TPU</span>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="card-header">
+              <span class="card-icon">&#128193;</span>
+              <a href="https://github.com/lcsc0" class="card-link" target="_blank" rel="noopener noreferrer">&#8599;</a>
+            </div>
+            <h3 class="card-title">Reflective Padding Detection</h3>
+            <p class="card-desc">First-author IEEE MIPR paper. Developed a mirrored padding detection algorithm that improved object detection average precision from 0.47 &rarr; 0.61 for hard hats and 0.68 &rarr; 0.73 for persons on augmented images.</p>
+            <div class="card-tags">
+              <span class="tag">Computer Vision</span>
+              <span class="tag">PyTorch</span>
+              <span class="tag">IEEE</span>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="card-header">
+              <span class="card-icon">&#128193;</span>
+              <a href="https://github.com/lcsc0" class="card-link" target="_blank" rel="noopener noreferrer">&#8599;</a>
+            </div>
+            <h3 class="card-title">Automated Prompt Refinement</h3>
+            <p class="card-desc">First-author IEEE MIPR paper. Developed the Contrastive Class Alignment Score (CCAS) to rank and filter VLM prompts by semantic alignment, increasing zero-shot detection precision by 112% for ambiguous object classes.</p>
+            <div class="card-tags">
+              <span class="tag">VLMs</span>
+              <span class="tag">NLP</span>
+              <span class="tag">Zero-Shot</span>
+              <span class="tag">IEEE</span>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="card-header">
+              <span class="card-icon">&#128193;</span>
+              <a href="https://github.com/lcsc0" class="card-link" target="_blank" rel="noopener noreferrer">&#8599;</a>
+            </div>
+            <h3 class="card-title">MaizeBus Backend</h3>
+            <p class="card-desc">Architected a scalable data infrastructure using MongoDB for a transit app with over 1.9K downloads. Built real-time data collection with async processing, external transit API integration, and in-memory caching to reduce latency.</p>
+            <div class="card-tags">
+              <span class="tag">Node.js</span>
+              <span class="tag">MongoDB</span>
+              <span class="tag">REST API</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="section-inner">
+        <h2 class="section-title reveal"><span class="accent">#</span> Contact</h2>
+        <div class="contact-inner reveal">
+          <p class="contact-lead">I'm always open to new opportunities, research collaborations, or just a chat about ML and systems.</p>
+          <a href="mailto:lcsc@umich.edu" class="btn btn-primary">Say Hello</a>
+          <div class="contact-links">
+            <a href="https://github.com/lcsc0" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://linkedin.com/in/lucas-choi0" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="mailto:lcsc@umich.edu">Email</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Designed &amp; Built by <span class="accent">Lucas Choi</span></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
