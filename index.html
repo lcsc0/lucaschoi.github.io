@@ -14,11 +14,13 @@
 
   <header id="navbar">
     <nav>
-      <a class="nav-logo" href="#hero">lc</a>
+      <a class="nav-logo" href="#hero">lcsc</a>
       <button class="nav-toggle" aria-label="Toggle menu">&#9776;</button>
       <ul class="nav-links">
-        <li><a href="#about">About</a></li>
         <li><a href="#projects">Projects</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#about">About</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
@@ -29,38 +31,10 @@
     <!-- HERO -->
     <section id="hero">
       <div class="hero-content reveal">
-        <p class="hero-greeting">// hello, world</p>
         <h1 class="hero-name">Lucas Choi<span class="cursor">_</span></h1>
         <p class="hero-subtitle">CS Student &amp; Researcher @ University of Michigan</p>
         <p class="hero-tagline">Building intelligent systems at the intersection of ML and software engineering.</p>
         <a href="#projects" class="btn btn-primary">View My Work</a>
-      </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section id="about">
-      <div class="section-inner">
-        <h2 class="section-title reveal"><span class="accent">#</span> About Me</h2>
-        <div class="about-grid reveal">
-          <div class="about-bio">
-            <p>I'm Lucas, a Computer Science student at the <strong>University of Michigan</strong> (B.S.E., GPA 3.9). I'm a Research Assistant at the Language and Information Technologies Group, where I work on agent training frameworks, adversarial evaluation, and reinforcement learning.</p>
-            <p>I enjoy working across the stack — from fine-tuning ML models and scaling infrastructure on Kubernetes, to building backend services and real-time data pipelines. I've also published three first-author papers at IEEE conferences.</p>
-            <p>When I'm not coding, I'm probably reading about distributed systems or playing chess online.</p>
-          </div>
-          <div class="about-skills">
-            <h3>// skills</h3>
-            <ul class="skills-list">
-              <li>TypeScript / Node.js</li>
-              <li>Python</li>
-              <li>Java / C++</li>
-              <li>SQL / PostgreSQL</li>
-              <li>PyTorch / HuggingFace</li>
-              <li>Reinforcement Learning</li>
-              <li>Docker / Kubernetes</li>
-              <li>Azure / Linux</li>
-            </ul>
-          </div>
-        </div>
       </div>
     </section>
 
@@ -128,6 +102,118 @@
             </div>
           </article>
 
+        </div>
+      </div>
+    </section>
+
+    <!-- PUBLICATIONS -->
+    <section id="publications">
+      <div class="section-inner">
+        <h2 class="section-title reveal"><span class="accent">#</span> Publications</h2>
+        <div class="publications-list">
+
+          <article class="pub-item reveal">
+            <span class="pub-venue">IEEE MIPR 2025</span>
+            <h3 class="pub-title">Reflective Padding Detection on Augmented Images</h3>
+            <p class="pub-authors"><strong>Lucas Choi</strong>, Ross Greer</p>
+            <p class="pub-desc">Developed a mirrored padding detection algorithm that improved object detection average precision from 0.47 &rarr; 0.61 for hard hats and 0.68 &rarr; 0.73 for persons.</p>
+          </article>
+
+          <article class="pub-item reveal">
+            <span class="pub-venue">IEEE MIPR 2025</span>
+            <h3 class="pub-title">Automated Prompt Refinement for Disambiguating Objects in VLMs</h3>
+            <p class="pub-authors"><strong>Lucas Choi</strong>, Ross Greer</p>
+            <p class="pub-desc">Developed the Contrastive Class Alignment Score (CCAS) to rank and filter VLM prompts by semantic alignment, increasing zero-shot detection precision by 112%.</p>
+          </article>
+
+          <article class="pub-item reveal">
+            <span class="pub-venue">IEEE VTC 2024</span>
+            <h3 class="pub-title">Evaluating VLMs for Zero-Shot Detection of Motorcycles, Passengers, and Helmets</h3>
+            <p class="pub-authors"><strong>Lucas Choi</strong>, Ross Greer</p>
+            <p class="pub-desc">Evaluated a foundation vision-language model for helmet usage detection using a cascaded detection strategy and CNN pipeline, achieving 0.53 AP despite low-resolution imagery.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education">
+      <div class="section-inner">
+        <h2 class="section-title reveal"><span class="accent">#</span> Education</h2>
+        <div class="edu-item reveal">
+          <div class="edu-header">
+            <h3 class="edu-school">University of Michigan</h3>
+            <span class="edu-location">Ann Arbor, Michigan</span>
+          </div>
+          <p class="edu-degree">B.S.E. in Computer Science &mdash; GPA: 3.9</p>
+          <p class="edu-courses">Relevant Coursework: Data Structures &amp; Algorithms, Computer Organization, Linear Algebra</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+      <div class="section-inner">
+        <h2 class="section-title reveal"><span class="accent">#</span> Skills</h2>
+        <div class="skills-grid reveal">
+
+          <div class="skill-box">
+            <h3 class="skill-box-title">Languages</h3>
+            <div class="skill-box-tags">
+              <span class="tag">TypeScript</span>
+              <span class="tag">Python</span>
+              <span class="tag">Java</span>
+              <span class="tag">C++</span>
+              <span class="tag">SQL</span>
+            </div>
+          </div>
+
+          <div class="skill-box">
+            <h3 class="skill-box-title">ML / AI</h3>
+            <div class="skill-box-tags">
+              <span class="tag">PyTorch</span>
+              <span class="tag">HuggingFace</span>
+              <span class="tag">Reinforcement Learning</span>
+              <span class="tag">TensorBoard</span>
+            </div>
+          </div>
+
+          <div class="skill-box">
+            <h3 class="skill-box-title">Infrastructure</h3>
+            <div class="skill-box-tags">
+              <span class="tag">Docker</span>
+              <span class="tag">Kubernetes</span>
+              <span class="tag">Azure</span>
+              <span class="tag">Linux</span>
+              <span class="tag">Git</span>
+            </div>
+          </div>
+
+          <div class="skill-box">
+            <h3 class="skill-box-title">Web / Data</h3>
+            <div class="skill-box-tags">
+              <span class="tag">Node.js</span>
+              <span class="tag">Express</span>
+              <span class="tag">React</span>
+              <span class="tag">PostgreSQL</span>
+              <span class="tag">MongoDB</span>
+              <span class="tag">REST APIs</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="section-inner">
+        <h2 class="section-title reveal"><span class="accent">#</span> About Me</h2>
+        <div class="about-bio reveal">
+          <p>I'm Lucas, a Computer Science student at the <strong>University of Michigan</strong> (B.S.E., GPA 3.9). I'm a Research Assistant at the Language and Information Technologies Group, where I work on agent training frameworks, adversarial evaluation, and reinforcement learning.</p>
+          <p>I enjoy working across the stack — from fine-tuning ML models and scaling infrastructure on Kubernetes, to building backend services and real-time data pipelines. I've also published three first-author papers at IEEE conferences.</p>
+          <p>When I'm not coding, I'm probably reading about distributed systems or playing chess online.</p>
         </div>
       </div>
     </section>
