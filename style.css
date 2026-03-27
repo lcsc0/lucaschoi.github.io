@@ -43,6 +43,11 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+main {
+  position: relative;
+  z-index: 1;
+}
+
 a {
   color: var(--accent);
   text-decoration: none;
@@ -162,6 +167,9 @@ strong { color: var(--text-primary); font-weight: 600; }
   inset: 0;
   pointer-events: none;
   z-index: 0;
+  will-change: transform;
+  contain: layout style;
+  transform: translateZ(0);
 }
 
 .bg-paths svg {
@@ -171,6 +179,7 @@ strong { color: var(--text-primary); font-weight: 600; }
   height: 100%;
   color: var(--text-primary);
   overflow: visible;
+  shape-rendering: optimizeSpeed;
 }
 
 .hero-content {
@@ -255,6 +264,8 @@ strong { color: var(--text-primary); font-weight: 600; }
    ============================================================ */
 section {
   padding: var(--section-gap) 0;
+  content-visibility: auto;
+  contain-intrinsic-size: auto 500px;
 }
 
 .section-inner {

@@ -1,54 +1,59 @@
 // 0. Animated background paths
-(function () {
+requestAnimationFrame(() => {
   const container = document.createElement('div');
   container.className = 'bg-paths';
 
-  [1, -1].forEach(position => {
-    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-    svg.setAttribute('viewBox', '0 0 696 316');
-    svg.setAttribute('fill', 'none');
-    svg.setAttribute('overflow', 'visible');
+  const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+  svg.setAttribute('viewBox', '0 0 696 316');
+  svg.setAttribute('fill', 'none');
+  svg.setAttribute('overflow', 'visible');
+  svg.setAttribute('preserveAspectRatio', 'none');
 
-    for (let i = 0; i < 36; i++) {
-      const p = position;
-      const d =
-        `M-${380 - i * 5 * p} -${189 + i * 6}` +
-        `C-${380 - i * 5 * p} -${189 + i * 6} ` +
-        `-${312 - i * 5 * p} ${216 - i * 6} ` +
-        `${152 - i * 5 * p} ${343 - i * 6}` +
-        `C${616 - i * 5 * p} ${470 - i * 6} ` +
-        `${684 - i * 5 * p} ${875 - i * 6} ` +
-        `${684 - i * 5 * p} ${875 - i * 6}`;
+  // Merge both orientations into a single SVG with ~36 paths
+  const BATCH_COUNT = 6;
+  const durations = Array.from({ length: BATCH_COUNT }, (_, b) => (26 + b * 3) * 1000);
 
-      const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-      path.setAttribute('d', d);
-      path.setAttribute('stroke', 'currentColor');
-      path.setAttribute('stroke-width', String(0.5 + i * 0.03));
-      path.style.opacity = String(0.2 + (i / 35) * 0.3);
-      svg.appendChild(path);
-    }
+  for (let i = 0; i < 36; i++) {
+    const p = i % 2 === 0 ? 1 : -1;
+    const idx = Math.floor(i / 2);
+    const d =
+      `M-${380 - idx * 5 * p} -${189 + idx * 6}` +
+      `C-${380 - idx * 5 * p} -${189 + idx * 6} ` +
+      `-${312 - idx * 5 * p} ${216 - idx * 6} ` +
+      `${152 - idx * 5 * p} ${343 - idx * 6}` +
+      `C${616 - idx * 5 * p} ${470 - idx * 6} ` +
+      `${684 - idx * 5 * p} ${875 - idx * 6} ` +
+      `${684 - idx * 5 * p} ${875 - idx * 6}`;
 
-    container.appendChild(svg);
-  });
+    const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    path.setAttribute('d', d);
+    path.setAttribute('stroke', 'currentColor');
+    path.setAttribute('stroke-width', String(0.5 + idx * 0.03));
+    svg.appendChild(path);
+  }
 
+  container.appendChild(svg);
   document.body.insertBefore(container, document.body.firstChild);
 
-  container.querySelectorAll('path').forEach((path, globalIdx) => {
+  svg.querySelectorAll('path').forEach((path, i) => {
     const totalLen = path.getTotalLength();
-    const dashLen = totalLen * 0.7;
-    const duration = (20 + Math.random() * 10) * 1000;
+    const dashLen = totalLen * 0.35;
+    const batchIdx = i % BATCH_COUNT;
+    const duration = durations[batchIdx];
 
     path.style.strokeDasharray = `${dashLen} ${totalLen - dashLen}`;
+    path.style.opacity = '0.12';
 
     path.animate(
       [
         { strokeDashoffset: '0' },
+        { strokeDashoffset: `${-totalLen}` },
         { strokeDashoffset: `${-totalLen * 2}` },
       ],
-      { duration, iterations: Infinity, easing: 'linear', delay: -Math.random() * duration }
+      { duration, iterations: Infinity, easing: 'linear', delay: -(batchIdx / BATCH_COUNT) * duration }
     );
   });
-}());
+});
 
 // 1. Navbar background on scroll
 const navbar = document.getElementById('navbar');
