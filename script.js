@@ -1,6 +1,5 @@
-// 0. Animated background paths in hero
+// 0. Animated background paths
 (function () {
-  const hero = document.getElementById('hero');
   const container = document.createElement('div');
   container.className = 'bg-paths';
 
@@ -8,6 +7,7 @@
     const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
     svg.setAttribute('viewBox', '0 0 696 316');
     svg.setAttribute('fill', 'none');
+    svg.setAttribute('overflow', 'visible');
 
     for (let i = 0; i < 36; i++) {
       const p = position;
@@ -24,30 +24,28 @@
       path.setAttribute('d', d);
       path.setAttribute('stroke', 'currentColor');
       path.setAttribute('stroke-width', String(0.5 + i * 0.03));
+      path.style.opacity = String(0.2 + (i / 35) * 0.3);
       svg.appendChild(path);
     }
 
     container.appendChild(svg);
   });
 
-  hero.insertBefore(container, hero.firstChild);
+  document.body.insertBefore(container, document.body.firstChild);
 
   container.querySelectorAll('path').forEach((path, globalIdx) => {
-    const i = globalIdx % 36;
     const totalLen = path.getTotalLength();
-    const dashLen = totalLen * 0.3;
-    const baseOpacity = 0.1 + i * 0.03;
+    const dashLen = totalLen * 0.7;
     const duration = (20 + Math.random() * 10) * 1000;
 
     path.style.strokeDasharray = `${dashLen} ${totalLen - dashLen}`;
 
     path.animate(
       [
-        { strokeDashoffset: 0,          opacity: baseOpacity * 0.5 },
-        { strokeDashoffset: -totalLen,  opacity: baseOpacity },
-        { strokeDashoffset: -totalLen * 2, opacity: baseOpacity * 0.5 },
+        { strokeDashoffset: '0' },
+        { strokeDashoffset: `${-totalLen * 2}` },
       ],
-      { duration, iterations: Infinity, easing: 'linear' }
+      { duration, iterations: Infinity, easing: 'linear', delay: -Math.random() * duration }
     );
   });
 }());
